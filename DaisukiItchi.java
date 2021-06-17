@@ -33,23 +33,13 @@ public class DaisukiItchi extends Application {
 	}
 	
 	public Pane gui(){
-		VBox maxPane = new VBox();
+		VBox maxPane = new VBox(20.0);
 		GridPane gp = new GridPane();
 		
 		//the title
 		Label lebell = new Label("DaisukiItchi: By Jordan Ashe");
 		lebell.setFont(Font.font("Times New Roman",FontWeight.BOLD, 20));
 		lebell.setTextFill(Color.BLACK);
-		maxPane.getChildren().add(lebell);
-		
-		//dasukiitchi
-		//gp.add(createDaisuki(),0,0);
-		
-		//Daisuki prompt
-		Label tfP = new Label("Test");
-		tfP.setFont(Font.font("Times New Roman", 20));
-		tfP.setTextFill(Color.BLACK);
-		maxPane.getChildren().add(tfP);
 		
 		//interactable buttons
 		Button btn1 = new Button("Yes");
@@ -70,7 +60,18 @@ public class DaisukiItchi extends Application {
 		gp.setHalignment(btn4, HPos.CENTER);
 		gp.setMaxWidth(200);
 		
+		//Daisuki prompt
+		Label tfP = new Label("Test");
+		tfP.setFont(Font.font("Times New Roman", 20));
+		tfP.setTextFill(Color.BLACK);
+		
+		//dasukiitchi
+		MyMonster dai = new MyMonster();
+		
+		maxPane.getChildren().add(lebell);
 		maxPane.getChildren().add(gp);
+		maxPane.getChildren().add(tfP);
+		maxPane.getChildren().add(dai);
 		maxPane.setAlignment(Pos.TOP_CENTER);
 		return maxPane;
 	} 
