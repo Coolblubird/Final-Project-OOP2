@@ -60,10 +60,10 @@ public class DaisukiItchi extends Application {
 		btn4.setPrefWidth(100);
 		
 		//Daisuki prompt
-		Label tfP = new Label("Test");
+		Label tfP = new Label(dai.getText());
 		tfP.setFont(Font.font("Times New Roman", 14));
 		tfP.setTextFill(Color.BLACK);
-	
+		
 		//question prompt
 		Label tfQ = new Label("This is DaisukiItchi, do you like him?");
 		tfQ.setFont(Font.font("Times New Roman", 20));
@@ -94,24 +94,24 @@ public class DaisukiItchi extends Application {
 				tfP.setText(dai.getText());
 				score.setText("Score: " + dai.getScore());
 			}
-			tfQ.setText(dai.getQuestion());
 			dai.newQuestion();
+			tfQ.setText(dai.getQuestion());
 		});
 		btn2.setOnAction(e -> {
 			if (dai.questions.size()>0){
 				dai.setEmote("sad");
 				tfP.setText(dai.getText());
 			}
-			tfQ.setText(dai.getQuestion());
 			dai.newQuestion();
+			tfQ.setText(dai.getQuestion());
 		});
 		btn3.setOnAction(e -> {
 			if (dai.questions.size()>0){
 				dai.setEmote("shock");
 				tfP.setText(dai.getText());
 			}
-			tfQ.setText(dai.getQuestion());
 			dai.newQuestion();
+			tfQ.setText(dai.getQuestion());
 		});
 		btn4.setOnAction(e -> {
 			if (dai.questions.size()>0){
@@ -119,8 +119,8 @@ public class DaisukiItchi extends Application {
 				tfP.setText(dai.getText());
 				score.setText("Score: " + dai.getScore());
 			}
-			tfQ.setText(dai.getQuestion());
 			dai.newQuestion();
+			tfQ.setText(dai.getQuestion());
 		});
 		
 		gp.add(btn1,0,0);

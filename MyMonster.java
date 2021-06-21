@@ -15,7 +15,7 @@ import java.util.ArrayList;
 
 class MyMonster extends Pane {
 	String emote = "hello";
-	String text = "Oh! Hello!";
+	String text = "Oh! Hello! Nice to meet you, friend!";
 	int score = 0;
 	String question = "Have you gone outside today?";
 	ArrayList<String> questions = new ArrayList<>();
@@ -87,7 +87,20 @@ class MyMonster extends Pane {
 				mouth.setStartAngle(150.0f);
 				mouth.setLength(180.0f);
 				break;
+			case "hello":
+				eye1.setRadiusY(15.0f);
+				eye2.setRadiusY(15.0f);
+				
+				mouth.setCenterX(200.0f);
+				mouth.setCenterY(100.0f);
+				mouth.setRadiusX(25.0f);
+				mouth.setRadiusY(25.0f);
+				mouth.setStartAngle(180.0f);
+				mouth.setLength(180.0f);
+				break;
 			default:
+				eye1.setRadiusY(10.0f);
+				eye2.setRadiusY(10.0f);
 				mouth.setCenterX(200.0f);
 				mouth.setCenterY(100.0f);
 				mouth.setRadiusX(25.0f);
@@ -129,7 +142,6 @@ class MyMonster extends Pane {
 	public void newQuestion(){
 		if (questions.size()>0) {
 			int index = (int)System.currentTimeMillis() % this.questions.size();
-			
 			
 			String result = questions.get(index);
 			questions.remove(index);
